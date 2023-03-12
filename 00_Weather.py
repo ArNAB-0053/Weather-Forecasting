@@ -1,11 +1,11 @@
 import requests
 import os
+import secret
 from datetime import datetime
 
 # user_api = os.environ['Current Weather Data']
 location = input("\n\nEnter your city: ")
-api_key = "a3318cc20474c79c538c38eba493aac2"
-complete_api_link =f"http://api.openweathermap.org/data/2.5/weather?q={location}&APPID={api_key}"
+complete_api_link =f"http://api.openweathermap.org/data/2.5/weather?q={location}&APPID={secret.api_key}"
 
 api_link = requests.get(complete_api_link)
 api_data = api_link.json()
